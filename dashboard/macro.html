@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Macro</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="sidebar">
+<h1>Quant Fund</h1>
+<a href="index.html">Dashboard</a>
+<a href="analytics.html">Analytics</a>
+<a href="risk.html">Risk</a>
+<a href="signals.html">Signals</a>
+<a href="macro.html">Macro</a>
+<a href="backtest.html">Backtesting</a>
+</div>
+
+<div class="main">
+
+<h2>Macroeconomic Indicators</h2>
+
+<div class="chart-grid">
+
+<div class="chart-box">
+<canvas id="macroChart"></canvas>
+</div><div class="chart-box">
+<canvas id="sentimentChart"></canvas>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const macroCtx = document.getElementById('macroChart');
+
+new Chart(macroCtx, {
+  type: 'line',
+
+  data: {
+    labels: ['Jan','Feb','Mar','Apr','May'],
+
+    datasets: [{
+      label: 'Inflation',
+      data: [4,5,6,5,4],
+      borderColor: '#ef4444',
+      borderWidth: 3
+    }]
+  }
+});
+
+const sentimentCtx = document.getElementById('sentimentChart');
+
+new Chart(sentimentCtx, {
+  type: 'doughnut',
+   data: {
+    labels: ['Positive','Negative','Neutral'],
+
+    datasets: [{
+      data: [65,20,15],
+      backgroundColor: ['#22c55e','#ef4444','#eab308']
+    }]
+  }
+});
+
+</script>
+
+</body>
+</html>

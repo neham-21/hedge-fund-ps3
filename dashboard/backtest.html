@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Backtesting</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="sidebar">
+<h1>Quant Fund</h1>
+<a href="index.html">Dashboard</a>
+<a href="analytics.html">Analytics</a>
+<a href="risk.html">Risk</a>
+<a href="signals.html">Signals</a>
+<a href="macro.html">Macro</a>
+<a href="backtest.html">Backtesting</a>
+</div>
+
+<div class="main">
+
+<h2>Backtesting Results</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>CAGR</h3>
+<p>18.4%</p>
+</div>
+<div class="card">
+<h3>Sharpe</h3>
+<p>1.84</p>
+</div>
+
+<div class="card">
+<h3>Alpha</h3>
+<p>0.81</p>
+</div>
+
+<div class="card">
+<h3>Beta</h3>
+<p>1.12</p>
+</div>
+
+</div>
+
+<div class="chart-box">
+<canvas id="backtestChart"></canvas>
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const backCtx = document.getElementById('backtestChart');
+
+new Chart(backCtx, {
+  type: 'line',
+ data: {
+    labels: ['Jan','Feb','Mar','Apr','May'],
+
+    datasets: [{
+      label: 'Strategy Returns',
+      data: [100,110,130,150,170],
+      borderColor: '#22d3ee',
+      borderWidth: 3,
+      tension: 0.4
+    }]
+  }
+});
+
+</script>
+
+</body>
+</html>

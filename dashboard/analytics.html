@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analytics</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="sidebar">
+<h1>Quant Fund</h1>
+<a href="index.html">Dashboard</a>
+<a href="analytics.html">Analytics</a>
+<a href="risk.html">Risk</a>
+<a href="signals.html">Signals</a>
+<a href="macro.html">Macro</a>
+<a href="backtest.html">Backtesting</a>
+</div>
+
+<div class="main">
+
+<h2>Multi Asset Analytics</h2>
+
+<div class="chart-grid">
+<div class="chart-box">
+<canvas id="assetReturns"></canvas>
+</div>
+
+<div class="chart-box">
+<canvas id="volumeChart"></canvas>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const assetCtx = document.getElementById('assetReturns');
+
+new Chart(assetCtx, {
+  type: 'bar',
+
+  data: {
+    labels: ['Oil', 'Gold', 'Equity', 'Bonds'],
+
+    datasets: [{
+      label: 'Returns %',
+      data: [14, 9, 21, 7],
+      backgroundColor: ['#ef4444','#eab308','#22d3ee','#22c55e']
+    }]
+  }
+});
+const volumeCtx = document.getElementById('volumeChart');
+
+new Chart(volumeCtx, {
+  type: 'line',
+
+  data: {
+    labels: ['Mon','Tue','Wed','Thu','Fri'],
+
+    datasets: [{
+      label: 'Volume',
+      data: [1200,1900,1600,2400,2100],
+      borderColor: '#22d3ee',
+      borderWidth: 3
+    }]
+  }
+});
+
+</script>
+
+</body>
+</html>

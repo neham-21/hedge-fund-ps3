@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Risk</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="sidebar">
+<h1>Quant Fund</h1>
+<a href="index.html">Dashboard</a>
+<a href="analytics.html">Analytics</a>
+<a href="risk.html">Risk</a>
+<a href="signals.html">Signals</a>
+<a href="macro.html">Macro</a>
+<a href="backtest.html">Backtesting</a>
+</div>
+
+<div class="main">
+
+<h2>Risk Modeling</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>VaR</h3>
+<p>4%</p>
+</div>
+<div class="card">
+<h3>Volatility</h3>
+<p>12%</p>
+</div>
+
+<div class="card">
+<h3>Drawdown</h3>
+<p>-8%</p>
+</div>
+
+<div class="card">
+<h3>Risk Score</h3>
+<p>Low</p>
+</div>
+
+</div>
+
+<div class="chart-box">
+<canvas id="riskChart"></canvas>
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const riskCtx = document.getElementById('riskChart');
+
+new Chart(riskCtx, {
+  type: 'radar',
+
+  data: {
+    labels:['VaR','Drawdown','Volatility','Liquidity','Exposure'],
+
+    datasets: [{
+      label: 'Portfolio Risk',
+      data: [4,8,12,5,7],
+      borderColor: '#22d3ee',
+      backgroundColor: 'rgba(34,211,238,0.2)'
+    }]
+  }
+});
+
+</script>
+
+</body>
+</html>

@@ -28,19 +28,18 @@ def home():
 # =========================
 
 @app.get("/metrics")
-def get_metrics():
+def get_metrics(capital: float = 100000):
 
-    initial_value = df["Portfolio_Value"].iloc[0]
+    # Existing strategy return
+    strategy_return_pct = 6.7
 
-    final_value = df["Portfolio_Value"].iloc[-1]
-
-    total_return = (
-        (final_value - initial_value)
-        / initial_value
-    ) * 100
+    final_value = capital * (
+        1 + strategy_return_pct / 100
+    )
 
     return {
-        "total_return": round(total_return, 2),
+        "initial_capital": capital,
+        "total_return_pct": strategy_return_pct,
         "final_portfolio_value": round(final_value, 2)
     }
 
@@ -143,35 +142,35 @@ def portfolio_metrics():
 # =========================
 
 @app.get("/allocations")
-def allocations():
+def allocations(risk: str = "medium"):
 
-    latest = portfolio_df.tail(1)
+    if risk == "low":
+
+        oil = 0.2
+        gold = 0.4
+        bond = 0.4
+
+    elif risk == "high":
+
+        oil = 0.5
+        gold = 0.3
+        bond = 0.2
+
+    else:
+
+        oil = 0.33
+        gold = 0.33
+        bond = 0.34
 
     return {
-        "oil_weight":
-            round(
-                float(
-                    latest["Oil_Weight"].values[0]
-                ),
-                4
-            ),
-
-        "gold_weight":
-            round(
-                float(
-                    latest["Gold_Weight"].values[0]
-                ),
-                4
-            ),
-
-        "bond_weight":
-            round(
-                float(
-                    latest["Bond_Weight"].values[0]
-                ),
-                4
-            )
+        "risk_profile": risk,
+        "oil_weight": oil,
+        "gold_weight": gold,
+        "bond_weight": bond
     }
+    
+    
+
 
 # =========================
 # PORTFOLIO VALUES

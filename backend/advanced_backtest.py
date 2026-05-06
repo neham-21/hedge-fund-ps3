@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Load dataset
-df = pd.read_csv("signals_nifty.csv")
+df = pd.read_csv("../data/processed/signals_nifty.csv")
 
 # =========================
 # Initial Settings

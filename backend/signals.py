@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Load processed dataset
-df = pd.read_csv("processed_nifty.csv")
+df = pd.read_csv("data/processed/processed_nifty.csv")
 
 # =========================
 # Generate Signals

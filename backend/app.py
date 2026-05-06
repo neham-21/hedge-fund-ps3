@@ -10,7 +10,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 # Load dataset
-df = pd.read_csv("advanced_backtest.csv")
+df = pd.read_csv("data/processed/advanced_backtest.csv")
 
 # =========================
 # HOME
@@ -110,7 +110,7 @@ def get_risk_metrics():
 # =========================
 
 portfolio_df = pd.read_csv(
-    "smart_portfolio_results.csv"
+    "data/processed/smart_portfolio_results.csv"
 )
 
 # =========================

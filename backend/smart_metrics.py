@@ -5,7 +5,7 @@ import numpy as np
 # Load Dataset
 # =========================
 
-df = pd.read_csv("smart_portfolio_results.csv")
+df = pd.read_csv("data/processed/smart_portfolio_results.csv")
 
 # Remove missing values
 df.dropna(inplace=True)

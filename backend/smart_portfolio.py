@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-df = pd.read_csv("multi_asset_dataset.csv")
+df = pd.read_csv("../data/raw/multi_asset_dataset.csv")
 
 # =========================
 # Calculate Returns
@@ -94,7 +94,7 @@ df["Portfolio_Value"] = (
 # Save
 # =========================
 
-df.to_csv("smart_portfolio_results.csv", index=False)
+df.to_csv("data/processed/smart_portfolio_results.csv", index=False)
 
 print(df[[
     "Oil_Weight",

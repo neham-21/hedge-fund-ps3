@@ -1,17 +1,32 @@
-# Hedge Fund Risk Modeling & Semi-Automated Trading System
+### **Hedge Fund Risk Modeling \& Semi-Automated Trading System**
 
-## Team Information
-- **Team Name**: [Team Name]
-- **Year**: [Year]
-- **All-Female Team**: [Yes/No]
+**Team Information**
 
-## Architecture Overview
 
-#### Describe your approach here. Keep it short and clear.
 
-    - How does your system ingest and preprocess the varying data sources (market, macro, sentiment)?
-    - What risk modeling techniques were selected, and how are they integrated into the trading decision pipeline?
-    - How does your semi-automated strategy generate signals while respecting portfolio constraints and handling realistic conditions like slippage?
-    - How is the dashboard designed to provide explainable insights and key metrics (Sharpe, drawdown) to stakeholders?
+Team Name:Trinity coders
 
-**Note:** Please do not change the format or spelling of anything in this README. The fields are extracted using a script, so any changes to the structure or formatting may break the extraction process.
+Year: 2nd Year
+
+All-Female Team: Yes
+
+
+
+Architecture Overview:
+
+
+
+Our Quant Fund webapp follows a modular full-stack architecture designed for portfolio analytics, risk management, and trading signal generation. The system is divided into three major layers: Data Layer, Backend Layer, and Frontend Layer.
+
+
+
+The Data Layer contains historical market datasets for equities, oil, gold, bonds, and macroeconomic indicators. These datasets are preprocessed using Python and Pandas to calculate technical indicators such as SMA, RSI, MACD, Bollinger Bands, volatility, and portfolio returns.
+
+
+
+The Backend Layer is built using FastAPI and acts as the core analytics engine. It performs signal generation, backtesting, risk analysis, portfolio optimization, and dynamic asset allocation. The backend exposes REST APIs such as /metrics, /signals, /allocations, and /portfolio-history which provide JSON responses to the frontend. The system also computes advanced financial metrics including Sharpe Ratio, Maximum Drawdown, Volatility, and Win Rate.
+
+
+
+The Frontend Layer is developed using HTML, CSS, JavaScript, and Chart.js to create an interactive dashboard. It visualizes portfolio performance, trading signals, and asset allocation through charts and tables. The frontend communicates with the backend APIs in real time, enabling dynamic and scalable financial analytics visualization
+
